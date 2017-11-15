@@ -1,34 +1,26 @@
 <template>
   <div class="notes">
-    <input type="text" id="input-text">
-    <button id="add-el">Add</button>
-    <ul class="options">
-      <li><a href="#">Clear all</a></li>
-      <li><a href="#">Check all</a></li>
-      <li><a href="#">Uncheck all</a></li>
-    </ul>
-    <ol class="check-list">
-      <li class="note-el" id="note1">
-        <input type="checkbox">
-        <span>The text of note</span>
-        <a href="#">Remove</a>
-      </li>
-      <li class="note-el" id="note2">
-        <input type="checkbox">
-        <span>The text of note</span>
-        <a href="#">Remove</a>
-      </li>
-    </ol>
+    <add-form></add-form>
+    <options-view></options-view>
+    <notes-list></notes-list>
   </div>
 </template>
 
 <script>
+import AddForm from '@/components/AddForm'
+import OptionView from '@/components/OptionsView'
+import NotesList from '@/components/NotesList'
+
 export default {
   name: 'NotesApp',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
+    'add-form': AddForm,
+    'options-view': OptionView,
+    'notes-list': NotesList
   }
 }
 </script>
