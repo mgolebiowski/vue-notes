@@ -18,7 +18,8 @@ export default {
   },
   methods: {
     itemRemoved (id) {
-      this.notesToShow.splice(id - 1, 1)
+      let toDelete = this.notesToShow.find((el) => (el.key === id))
+      this.notesToShow.splice(this.notesToShow.indexOf(toDelete), 1)
     }
   },
   components: {

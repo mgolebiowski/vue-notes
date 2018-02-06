@@ -14,6 +14,7 @@ export default {
   name: 'NotesApp',
   data () {
     return {
+      counter: 5,
       test_prop: 'hello world',
       notes: [
       { key: 1, message: 'item1' },
@@ -27,10 +28,13 @@ export default {
     newNote: function (text) {
       if (text) {
         this.notes.push({
-          key: this.notes.length + 1,
+          key: this.generateNewID(),
           message: text
         })
       }
+    },
+    generateNewID () {
+      return this.counter++
     }
   },
   components: {
